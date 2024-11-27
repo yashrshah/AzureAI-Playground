@@ -1,0 +1,23 @@
+﻿@page
+@model ImageAnalysisModel
+@section Title {
+ Image Analysis
+}
+
+<h2>Analyze an Image</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="imageFile" class="form-label">Upload an Image</label>
+        <input type="file" class="form-control" id="imageFile" name="imageFile" />
+    </div>
+    <button type="submit" class="btn btn-primary">Analyze</button>
+</form>
+
+@if (ViewData["Description"] != null)
+{
+    <div class="mt-4">
+        <h4>Image Description:</h4>
+        <p>@ViewData["Description"]</p>
+    </div>
+}
